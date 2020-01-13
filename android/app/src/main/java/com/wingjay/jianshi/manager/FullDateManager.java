@@ -1,4 +1,14 @@
-package com.wingjay.jianshi.util;
+/*
+ * Created by wingjay on 12/11/16 10:52 PM
+ * Copyright (c) 2016.  All rights reserved.
+ *
+ * Last modified 11/16/16 3:32 PM
+ *
+ * Reach me: https://github.com/wingjay
+ * Email: yinjiesh@126.com
+ */
+
+package com.wingjay.jianshi.manager;
 
 import org.joda.time.DateTime;
 

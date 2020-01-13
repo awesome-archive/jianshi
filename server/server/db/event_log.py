@@ -4,7 +4,7 @@
 import pymysql
 import pymysql.cursors
 
-import server.db.init as base_db
+from server.db import init as base_db
 from server.data import errors
 from server import app
 
@@ -24,7 +24,7 @@ def add_event_log(user_id, log_item):
             new_event_id = cursor.lastrowid
             conn.commit()
     except Exception as e:
-        logger.error(e)
+        logger.exception(e)
         raise errors.DbCreateError()
     finally:
         conn.close()

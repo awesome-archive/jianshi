@@ -2,6 +2,11 @@
 
 一款优雅的中国风Android App，包括Android端和Server端，支持登录注册，数据云端同步，离线数据存储和截屏分享等功能。
 
+<a href="https://play.google.com/store/apps/details?id=com.wingjay.android.jianshi"><img alt="Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=50px/></a>
+
+[下载地址: Fir.im](http://fir.im/vd1r)
+
+
 
 # 技术
 ### Android
@@ -32,16 +37,26 @@
 
 # Android 界面
 
-<img src="material/screenshots/1.png" width = 400>
-<img src="material/screenshots/7.png" width = 400>
+<img src="material/screenshots/with_phone/1.PNG" width = 400>
+<img src="material/screenshots/with_phone/2.PNG" width = 400>
+<img src="material/screenshots/with_phone/3.PNG" width = 400>
+<img src="material/screenshots/with_phone/4.PNG" width = 400>
+<img src="material/screenshots/with_phone/7.PNG" width = 400>
+<img src="material/screenshots/with_phone/8.PNG" width = 400>
+
+<img src="material/screenshots/with_phone/6.png" width = 400>
 <img src="material/screenshots/3.png" width = 400>
-<img src="material/screenshots/4.png" width = 400>
-<img src="material/screenshots/6.png" width = 400>
-<img src="material/screenshots/8.png" width = 400>
-<img src="material/screenshots/Login.png" width = 400>
-<img src="material/screenshots/5.png" width = 400>
-<img src="material/screenshots/2.jpg" width = 600>
+
+<img src="material/screenshots/with_phone/5.jpg" width = 600>
 <img src="material/screenshots/shareImage.png" width = 800>
+
+
+# 中文博客介绍
+[如何在一天之内完成一款具备cool属性的Android产品_简书](http://www.jianshu.com/p/cf496fc408b2)
+
+
+# 贡献者
+我们一起为 简诗 搭建 Android 和 Server：[wingjay](https://github.com/wingjay), [RayPan](https://github.com/Panl). 
 
 # 开发历史 
 项目的开发都是利用本人的业余时间，因此进度并没有太快。
@@ -54,14 +69,8 @@
 - __[2016/08/20] 着手搭建`python` `Flask`后台框架，并基于 `LeanCloud` 来进行部署。 [Server]__
 - __[2016/08/18] 在Android端集成 `Dagger` `Retrofit2` `OkHttp3` `RxJava`等库。 [Android]__
 
-
-# 中文博客介绍
-[如何在一天之内完成一款具备cool属性的Android产品_简书](http://www.jianshu.com/p/cf496fc408b2)
-
-
-# 贡献者
-我们一起为 简诗 搭建 Android 和 Server：[wingjay](https://github.com/wingjay), [RayPan](https://github.com/Panl). 
-
 # 参考
 [《Producter》](http://producter.io/)
 
+# License
+Apache

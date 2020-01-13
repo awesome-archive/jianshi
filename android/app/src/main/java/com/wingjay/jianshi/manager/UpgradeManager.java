@@ -1,3 +1,13 @@
+/*
+ * Created by wingjay on 11/16/16 3:32 PM
+ * Copyright (c) 2016.  All rights reserved.
+ *
+ * Last modified 11/10/16 11:05 AM
+ *
+ * Reach me: https://github.com/wingjay
+ * Email: yinjiesh@126.com
+ */
+
 package com.wingjay.jianshi.manager;
 
 import com.wingjay.jianshi.Constants;
@@ -28,20 +38,6 @@ public class UpgradeManager {
 
   @Inject
   UpgradeManager() {}
-
-  public void checkUpgrade() {
-    checkUpgradeObservable().subscribe(new Action1<VersionUpgrade>() {
-      @Override
-      public void call(VersionUpgrade versionUpgrade) {
-
-      }
-    }, new Action1<Throwable>() {
-      @Override
-      public void call(Throwable throwable) {
-        Timber.e(throwable, "check upgrade failure");
-      }
-    });
-  }
 
   public Observable<VersionUpgrade> checkUpgradeObservable() {
     return Observable.defer(new Func0<Observable<VersionUpgrade>>() {

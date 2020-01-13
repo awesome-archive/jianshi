@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import random, time
 
 from server import app
@@ -12,8 +15,13 @@ from server.util import mathutil
 
 
 @app.route("/index")
-def index(**kwargs):
+def index():
     return "index"
+
+
+@app.route("/ping")
+def ping():
+    return "pong"
 
 
 @app.route("/www/index")
@@ -57,10 +65,8 @@ def get_home_poem(width=0, height=0, **kwargs):
     if width == 0 or height == 0:
         width = 900
         height = 1600
-    image_index = random.randint(0, len(server.data.images.images) - 1)
     poem_index = random.randint(0, len(server.data.poems.poems) - 1)
-
-    unsplash_image_url = server.data.images.get_unsplash_url(image_index, width, height)
+    unsplash_image_url = server.data.images.get_unsplash_url(width, height)
 
     next_fetch_time = int(time.time()) + app.config['HOME_IMAGE_POEM_FETCH_TIME_GAP']
     return {
@@ -87,4 +93,17 @@ def get_share_text(**kwargs):
     return {
         'link': link,
         'share_text': share_text
+    }
+
+
+@app.route("/pay/developer", methods=['GET'])
+@mobile_request
+def pay_developer(**kwargs):
+    return {
+        'title': '打赏开发者',
+        'message': '为了把简诗的美好带给大家,程序猿小哥花费了很多个人时间和精力进行开发,'
+                   '甚至自己掏钱购买服务器来为用户云备份日记,看程序猿小哥这么可怜,快来打赏杯咖啡吧,这样小哥更有动力去为你带来更多美好哦.(打赏时附上账号以后有惊喜哦)',
+        'ali_pay_account': '18916376110',
+        'wechat_pay_account': 'iam_wingjay',
+        'time_gap_seconds': 3 * 86400
     }

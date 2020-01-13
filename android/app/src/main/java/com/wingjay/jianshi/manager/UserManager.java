@@ -1,3 +1,13 @@
+/*
+ * Created by wingjay on 11/16/16 3:32 PM
+ * Copyright (c) 2016.  All rights reserved.
+ *
+ * Last modified 11/10/16 11:05 AM
+ *
+ * Reach me: https://github.com/wingjay
+ * Email: yinjiesh@126.com
+ */
+
 package com.wingjay.jianshi.manager;
 
 import android.app.ProgressDialog;
@@ -12,6 +22,8 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.wingjay.jianshi.Constants;
 import com.wingjay.jianshi.R;
 import com.wingjay.jianshi.bean.User;
+import com.wingjay.jianshi.db.model.Diary;
+import com.wingjay.jianshi.db.model.EventLog;
 import com.wingjay.jianshi.db.model.PushData;
 import com.wingjay.jianshi.network.JsonDataResponse;
 import com.wingjay.jianshi.network.UserService;
@@ -72,7 +84,8 @@ public class UserManager {
 
               context.startActivity(MainActivity.createIntent(context));
             } else {
-              Toast.makeText(context, context.getString(R.string.server_error),
+              Timber.e("login failure msg: %s", userJsonDataResponse.getMsg());
+              Toast.makeText(context, userJsonDataResponse.getMsg(),
                   Toast.LENGTH_SHORT).show();
             }
           }
@@ -111,8 +124,8 @@ public class UserManager {
               userPrefsLazy.get().setUser(user);
               context.startActivity(MainActivity.createIntent(context));
             } else {
-
-              Toast.makeText(context, context.getString(R.string.server_error),
+              Timber.e("signup failure msg: %s", userJsonDataResponse.getMsg());
+              Toast.makeText(context, userJsonDataResponse.getMsg(),
                   Toast.LENGTH_SHORT).show();
             }
           }
@@ -158,7 +171,7 @@ public class UserManager {
                   dialogInterface.dismiss();
                 }
               });
-          builder.show();
+          builder.create().show();
         }
       });
     } else {
@@ -167,10 +180,10 @@ public class UserManager {
   }
 
   private void doLogout(final @NonNull Context context) {
-    userPrefs.clearAuthToken();
-    userPrefs.clearUser();
+    userPrefs.clear();
     SQLite.delete().from(PushData.class).execute();
-    SQLite.delete().from(PushData.class).execute();
+    SQLite.delete().from(EventLog.class).execute();
+    SQLite.delete().from(Diary.class).execute();
     context.startActivity(SignupActivity.createIntent(context));
   }
 }

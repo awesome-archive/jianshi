@@ -1,3 +1,13 @@
+/*
+ * Created by wingjay on 11/16/16 3:31 PM
+ * Copyright (c) 2016.  All rights reserved.
+ *
+ * Last modified 11/10/16 11:05 AM
+ *
+ * Reach me: https://github.com/wingjay
+ * Email: yinjiesh@126.com
+ */
+
 package com.wingjay.jianshi.db.model;
 
 import com.raizlabs.android.dbflow.annotation.Column;
@@ -5,7 +15,7 @@ import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 import com.wingjay.jianshi.db.JianshiDatabase;
-import com.wingjay.jianshi.util.FullDateManager;
+import com.wingjay.jianshi.manager.FullDateManager;
 
 @Table(database = JianshiDatabase.class)
 public class Diary extends BaseModel{

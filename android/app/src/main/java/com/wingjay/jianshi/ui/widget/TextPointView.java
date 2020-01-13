@@ -1,3 +1,13 @@
+/*
+ * Created by wingjay on 11/16/16 3:31 PM
+ * Copyright (c) 2016.  All rights reserved.
+ *
+ * Last modified 11/10/16 11:05 AM
+ *
+ * Reach me: https://github.com/wingjay
+ * Email: yinjiesh@126.com
+ */
+
 package com.wingjay.jianshi.ui.widget;
 
 import android.content.Context;
@@ -16,10 +26,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.wingjay.jianshi.R;
-import com.wingjay.jianshi.ui.widget.font.FontFamilyFactory;
 import com.wingjay.jianshi.util.DisplayUtil;
 
 import java.util.Random;
+
+import uk.co.chrisjenx.calligraphy.TypefaceUtils;
 
 /**
  * One Text on the circle background.
@@ -69,7 +80,7 @@ public class TextPointView extends FrameLayout {
         ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     params.gravity = Gravity.CENTER;
     textView.setLayoutParams(params);
-    textView.setTypeface(FontFamilyFactory.getTypeface());
+    textView.setTypeface(TypefaceUtils.load(context.getAssets(), "fonts/jianshi_default.otf"));
     textView.setTextSize(textSize);
     textView.setTextColor(ContextCompat.getColor(context, R.color.white));
     textView.setText(singleText);

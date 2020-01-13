@@ -1,3 +1,13 @@
+/*
+ * Created by wingjay on 11/16/16 3:31 PM
+ * Copyright (c) 2016.  All rights reserved.
+ *
+ * Last modified 11/10/16 11:05 AM
+ *
+ * Reach me: https://github.com/wingjay
+ * Email: yinjiesh@126.com
+ */
+
 package com.wingjay.jianshi.ui;
 
 import android.content.Intent;
@@ -22,7 +32,7 @@ public class SplashActivity extends BaseActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_splash);
-    handler.sendEmptyMessageDelayed(JUMP_TO_NEXT, 1000);
+    handler.sendEmptyMessageDelayed(JUMP_TO_NEXT, 500);
   }
 
   private static class MyHandler extends Handler {
